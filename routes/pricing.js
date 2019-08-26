@@ -1,8 +1,8 @@
-var express = require('express');
-var router  = express.Router();
+const express = require('express');
+const controller = require('../controllers').pricing
 
-var pricing_controller = require('../controllers/pricing_controller');
+const router  = express.Router();
 
-router.get('/', pricing_controller.index);
+router.get('/', controller.index);
 
 module.exports = router;

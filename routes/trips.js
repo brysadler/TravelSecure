@@ -1,11 +1,9 @@
-var express = require('express');
-var router  = express.Router();
+const express = require('express');
+const router  = express.Router();
+const controller = require('../controllers').trips
 
-var trips_controller = require('../controllers/trips_controller');
-var isAuthenticated = require("../config/middleware/isAuthenticated");
-
-router.get('/', isAuthenticated, trips_controller.index);
-
-router.post('/new', isAuthenticated, trips_controller.createTrip);
+router.use(require("../config/middleware/isAuthenticated"))
+router.get('/', controller.index);
+router.post('/new', controller.createTrip);
 
 module.exports = router;

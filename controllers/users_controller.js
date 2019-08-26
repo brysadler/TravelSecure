@@ -2,7 +2,7 @@ var db = require('../models');
 
 //this is the users_controller.js file
 exports.registrationPage = (req,res) => {
-  res.render('users/registration', {
+  res.render('pages/registration', {
     layout: 'main-registration'
   });
 };
